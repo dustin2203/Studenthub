@@ -1,2 +1,2 @@
 # studenthub
-# This project is still in early development.
+# - private Project -
