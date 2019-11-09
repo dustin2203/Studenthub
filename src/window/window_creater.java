@@ -4,51 +4,54 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class window_creater {
+    JFrame window;
 
     // Method to create a new Window
     // requires: a string which defines the title.
-    public static JFrame createNewWindow(String title) {
-        JFrame frame = new JFrame("Button Example");
-        return frame;
+    public JFrame createNewWindow(String title) {
+        this.window = new JFrame("Button Example");
+        return this.window;
     }
 
     // Method to create a new Textfield
     // requires: four bound values, defining where the tf should appear.
-    public static JTextField createNewTestField(int x, int y, int width, int height) {
+    public JTextField createNewTestField(int x, int y, int width, int height) {
         final JTextField text_field = new JTextField();
         text_field.setBounds(x, y, width, height);
         return text_field;
     }
 
-    public static JButton createNewJButton(String text, int x, int y, int width, int height) {
+    // Method to create a new Button
+    //requires: four bound values, defining where the tf should appear.
+    public JButton createNewJButton(String text, int x, int y, int width, int height) {
         JButton button = new JButton(text);
         button.setBounds(x, y, width, height);
         return button;
     }
 
-    public static void startWindow() {
-
+    public void initializeWindow(int width, int height ) {
+        this.window.setVisible(true);
+        this.window.setSize(400,400);
     }
 
-    public static ActionListener addActionListener() {
+   // public ActionListener addActionListener() {
+
+  //  }
+
+
+       // f.add(b);f.add(tf);
+      //  f.setSize(400,400);
+       // f.setLayout(null);
+       // f.setVisible(true);
+
+
+    public static void main(String[] args) {
+
+        window_creater window = new window_creater();
+        window.createNewJButton("Test", 10, 10, 10, 10);
 
     }
-
-
-    JFrame f = createNewWindow("Test");
-    final JTextField tf = new JTextField();
-        tf.setBounds(50,50,150,20);
-    JButton b = new JButton("Click Here");
-        b.setBounds(50,100,95,30);
-        b.addActionListener(new
-
-    ActionListener() {
-        public void actionPerformed (ActionEvent e){
-            tf.setText("Welcome to Javatpoint.");
-        }
-    });
-        f.add(b);f.add(tf);
-        f.setSize(400,400);
-        f.setLayout(null);
-        f.setVisible(true);
 }
+
+
+
