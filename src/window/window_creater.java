@@ -1,15 +1,11 @@
 package window;
 
 import javax.swing.*;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
+import java.awt.event.*;
 
 public class window_creater {
     // Attribute JFrame window
     JFrame window;
-    GraphicsEnvironment graphics =
-            GraphicsEnvironment.getLocalGraphicsEnvironment();
-    GraphicsDevice device = graphics.getDefaultScreenDevice();
 
     // Method to create a new Window
     // requires: a string which defines the title.
@@ -34,30 +30,28 @@ public class window_creater {
         return button;
     }
 
-    // Method to set the window size.
-    //requires: width and height of the window.
-    public void setWindowSize(int width, int height) {
-        this.window.setSize(width, height);
-    }
-
-    //Method to set the window size to fullscreen.
-    public void setWindowToFullScreen() {
-        device.setFullScreenWindow(this.window);
-    }
-
-    //Method to finish the setup and sets the window to visible.
-    public void finishSetUp() {
+    public void initializeWindow(int width, int height ) {
+        this.window.setSize(width,height);
         this.window.setVisible(true);
     }
 
-   //TODO:: Implement ActionListeners
+   // public ActionListener addActionListener() {
+
+  //  }
+
+
+       // f.add(b);f.add(tf);
+      //  f.setSize(400,400);
+       // f.setLayout(null);
+       // f.setVisible(true);
+
 
     public static void main(String[] args) {
 
         window_creater window = new window_creater();
         window.createNewWindow("Test");
         window.createNewJButton("Test", 10, 10, 10, 10);
-        window.setWindowToFullScreen();
+        window.initializeWindow(400, 400);
         System.out.print("WindowCreatorFinished");
 
     }
