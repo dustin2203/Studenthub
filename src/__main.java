@@ -9,9 +9,9 @@ import window.*;
  * Author:: Dustin Wickert
  */
 
-class __main {
-    public static void main(String[] args) {
+//class __main {
+//    public static void main(String[] args) {
 
-    }
+//    }
 
-}
+//}

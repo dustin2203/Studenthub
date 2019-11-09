@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class window_creater {
+    // Attribute JFrame window
     JFrame window;
 
     // Method to create a new Window
@@ -30,8 +31,8 @@ public class window_creater {
     }
 
     public void initializeWindow(int width, int height ) {
+        this.window.setSize(width,height);
         this.window.setVisible(true);
-        this.window.setSize(400,400);
     }
 
    // public ActionListener addActionListener() {
@@ -48,7 +49,10 @@ public class window_creater {
     public static void main(String[] args) {
 
         window_creater window = new window_creater();
+        window.createNewWindow("Test");
         window.createNewJButton("Test", 10, 10, 10, 10);
+        window.initializeWindow(400, 400);
+        System.out.print("WindowCreatorFinished");
 
     }
 }
